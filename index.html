@@ -2,11 +2,51 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <style type="text/css">
+      <!--
+      form#query-form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      input {
+        width: 50%;
+        border: solid 1px;
+      }
+
+      button {
+        width: 20%;
+        background-color: #ddd;
+      }
+
+      span.db-response {
+        display: inline-block;
+        padding: 0 5px;
+        border: solid 1px;
+        height: 30px;
+        width: 100px;
+      }
+      -->
+    </style>
   </head>
   <body>
-    <h1>test</h1>
+    <h1>database test</h1>
 
-    <a href="http://dev-test.nemikor.com/web-storage/support-test/">storage check</a>
+    <form id="query-form" onsubmit="return false">
+      <input type="text" id="db-query" value="">
+      <button id="submit-query">submit</button>
+      <button id="get-tables">get Tables</button>
+    </form>
+    <article>
+      <section>
+        <h1>Tables</h1>
+        <div id="tables"></div>
+      </section>
+      <section>
+        <h1>db response</h1>
+        <div id="db-response"></div>
+      </section>
+    </article>
 
     <script type="text/javascript" src="src/app.js"></script>
   </body>
