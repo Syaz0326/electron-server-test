@@ -1,8 +1,8 @@
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, ipcMain} = require('electron')
 const path = require("path")
 const url = require("url")
 
-require("./server.js")
+let server = require("./server.js")
 
 let win = null
 
@@ -35,4 +35,8 @@ app.on('activate', () => {
   if(win === null) {
     createWindow()
   }
+})
+
+ipcMain.on('init', (event) => {
+  event.returnValue = server.HOST
 })
