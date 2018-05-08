@@ -3,13 +3,15 @@ const express = require("express")
 const app = express()
 const http = require("http").Server(app)
 const bodyParser = require("body-parser")
+const ip = require('ip');
 
 const db = require("./database/module.js")
 
-const getIP = require("./getLocalIPAddress.js")
-const IP = getIP()
+// const getIP = require("./getLocalIPAddress.js")
+// const IP = getIP()
+const IP = ip.address()
 
-const HOST = IP.v4
+const HOST = IP
 // const HOST = 'localhost'
 const PORT = 10080
 
